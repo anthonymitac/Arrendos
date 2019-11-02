@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Sector;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->truncateTables([
+            'sector',
+        ]);
         // $this->call(UsersTableSeeder::class);
+        $this->call(AddSectorSeeder::class);
     }
+    protected function truncateTables(array $tables){
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');//desactivar las llaves foraneas
+
+        foreach ($tables as $table) {
+            DB::table($table)->truncate();//vacias las tablas   
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');//activar las llaves foraneas
+
+    }
+
 }
