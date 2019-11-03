@@ -19,15 +19,15 @@ class AddSector extends Migration
             $table->string('codeSector',10)->primary();
 
             //LLAVE FORANEA DE LOCAL
-            $table->string('codeLocal');
+            $table->string('codeLocal',10);
             $table->foreign('codeLocal')->references('codeLocal')->on('local');
 
             //LLAVE FORANEA DE LESSOR
-            $table->string('codeLessor');
+            $table->string('codeLessor',10);
             $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
 
             //LLAVE FORANEA DE DEBT
-            $table->string('codeDebt');
+            $table->string('codeDebt',10);
             $table->foreign('codeDebt')->references('codeDebt')->on('debt');
 
             //NOMBRE DEL SECTOR

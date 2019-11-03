@@ -15,18 +15,35 @@ class AddDebtCollector extends Migration
     {
         Schema::create('collector', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-
+            //CLAVE PRIMARIA DE COLLECTOR
             $table->string('codeCollector',10)->primary();
 
-            $table->string('nameCollector',60);
+            //CLAVE FORANEA DE SECTOR
+            $table->string('codeSector',10);
+            $table->foreign('codeSector')->references('codeSector')->on('sector');
+            
+            //CLAVE FORANEA DE LOCAL
+            $table->string('codeLocal',10);
+            $table->foreign('codeLocal')->references('codeLocal')->on('local');
 
-            $table->integer('dniCollector');
+            //CLAVE FORANEA DE ARRENDADOR
+            $table->string('codeLessor',10);
+            $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
 
-            $table->string('surnamesCollector',100);
+            //CLAVE FORANEA DE DEUDA
+            $table->string('codeDebt',10);
+            $table->foreign('codeDebt')->references('codeDebt')->on('debt');
+            
 
-            $table->string('genderCollector',1);
+            $table->string('nameCollector',60)->nullable();
 
-            $table->timestamps();
+            $table->integer('dniCollector')->nullable();
+
+            $table->string('surnamesCollector',100)->nullable();
+
+            $table->string('genderCollector',1);    
+
+            //$table->timestamps();
         });
     }
 

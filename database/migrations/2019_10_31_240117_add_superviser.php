@@ -17,7 +17,7 @@ class AddSuperviser extends Migration
         Schema::create('superviser', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->string('codeSuperviser')->primary();
+            $table->string('codeSuperviser',10)->primary();
 
             //ACA SE PONDRAN LLLAVES FORANEAS PARA QUE LA TABLA SUPERVISOR
             //SEA MAS DETALLADA
@@ -39,19 +39,19 @@ class AddSuperviser extends Migration
             $table->foreign('codeLocal')->references('codeLocal')->on('local');
 
             //CODIGO DE LA DEUDA DE CADA LOCAL
-            $table->string('codeDebt');
+            $table->string('codeDebt',10);
             $table->foreign('codeDebt')->references('codeDebt')->on('debt');
 
             $table->string('nameSuperviser',60);
 
-            $table->integer('dniSuperviser');
+            $table->string('dniSuperviser',8);
 
             $table->string('surnamesSuperviser',100);
 
             $table->string('genderSuperviser',1);
 
 
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 

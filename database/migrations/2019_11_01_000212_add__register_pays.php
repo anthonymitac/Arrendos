@@ -23,15 +23,15 @@ class AddRegisterPays extends Migration
             $table->foreign('codeSector')->references('codeSector')->on('sector');
 
             //LLAVE FORANEA DEL CODIGO DEL LOCAL
-            $table->string('codeLocal');
+            $table->string('codeLocal',10);
             $table->foreign('codeLocal')->references('codeLocal')->on('local');
 
             //LLAVE FORANEA DEL CODIGO DEL COBRADOR
-            $table->string('codeCollector');
+            $table->string('codeCollector',10);
             $table->foreign('codeCollector')->references('codeCollector')->on('collector');
 
             //LLAVE FORANEA DEL CODIGO DE LA DEUDA
-            $table->string('codeDebt');
+            $table->string('codeDebt',10);
             $table->foreign('codeDebt')->references('codeDebt')->on('debt');
 
             //LLAVE FORANEA DEL CODIGO DEL SUPERVISOR
@@ -39,8 +39,13 @@ class AddRegisterPays extends Migration
             //$table->foreign('codeSuperviser')->references('codeSuperviser')->on('superviser');
 
             //LLAVE FORANEA DE CODIGO DE ARRENDADOR
-            $table->string('codeLessor');
+            $table->string('codeLessor',10);
             $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
+
+            //LLAVE FORANEA DE SUPERVISOR
+            $table->string('codeSuperviser',10);
+            $table->foreign('codeSuperviser')->references('codeSuperviser')->on('superviser');
+            
 
             //NUMERO DE MESES PAGADOS POR EL ARRENDADOR
             $table->unsignedInteger('numMounthsPays');
@@ -61,5 +66,6 @@ class AddRegisterPays extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('registerpays');
     }
 }

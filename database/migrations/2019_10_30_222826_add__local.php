@@ -18,10 +18,10 @@ class AddLocal extends Migration
             //LLAVE PRIMARIA DE LOCAL
             $table->string('codeLocal',10)->primary();
             //LLAVE FORANEA DE LESSOR
-            $table->string('codeLessor');
+            $table->string('codeLessor',10);
             $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
             //LLAVE FORANEA DE DEBT
-            $table->string('codeDebt');
+            $table->string('codeDebt',10);
             $table->foreign('codeDebt')->references('codeDebt')->on('debt');
 
             //NOMBRE DEL LOCAL

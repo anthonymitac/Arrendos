@@ -17,7 +17,7 @@ class AddDebt extends Migration
             $table->engine = 'InnoDB';
             $table->string('codeDebt',10)->primary();
             //LLAVE FORANEA DE LESSOR
-            $table->string('codeLessor');
+            $table->string('codeLessor',10);
             $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
 
             //NUMERO DE MESES DE LA DEUDA
@@ -29,7 +29,7 @@ class AddDebt extends Migration
             //DEUDA TOTAL DEL SECTOR
             $table->integer('totalDebt');
 
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 

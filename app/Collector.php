@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sector extends Model
+class Collector extends Model
 {
     //
     public $timestamps=false;
-    public $table = "sector";
+    public $table = "collector";
 }

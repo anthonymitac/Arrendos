@@ -20,13 +20,13 @@ class AddLessor extends Migration
 
             $table->string('nameLessor',60);
 
-            $table->integer('dniLessor');
+            $table->string('dniLessor',8);
 
             $table->string('surnamesLessor',100);
 
             $table->string('genderLessor',1);
 
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 
