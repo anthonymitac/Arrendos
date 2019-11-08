@@ -17,30 +17,30 @@ class AddSuperviser extends Migration
         Schema::create('superviser', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->string('codeSuperviser',10)->primary();
+            $table->bigIncrements('codeSuperviser')->unsigned();
 
             //ACA SE PONDRAN LLLAVES FORANEAS PARA QUE LA TABLA SUPERVISOR
             //SEA MAS DETALLADA
 
             //LLAVE FORANEA DE CODIGO DE COBRADOR
-            $table->string('codeCollector',10);
-            $table->foreign('codeCollector')->references('codeCollector')->on('collector');
+            $table->bigInteger('codeCollector')->unsigned();
+            $table->foreign('codeCollector')->references('codeCollector')->on('collector')->onDelete('cascade');
 
             //CODIGO DE SECTOR 
-            $table->string('codeSector',10);
-            $table->foreign('codeSector')->references('codeSector')->on('sector');
+            $table->bigInteger('codeSector')->unsigned();
+            $table->foreign('codeSector')->references('codeSector')->on('sector')->onDelete('cascade');
 
             //CODIGO DE ARRENDADOR
-            $table->string('codeLessor',10);
-            $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
+            $table->bigInteger('codeLessor')->unsigned();
+            $table->foreign('codeLessor')->references('codeLessor')->on('lessor')->onDelete('cascade');
 
             //CODIGO DE LOCAL PARA PODER SACAR LOS NOMBRES
-            $table->string('codeLocal',10);
-            $table->foreign('codeLocal')->references('codeLocal')->on('local');
+            $table->bigInteger('codeLocal')->unsigned();
+            $table->foreign('codeLocal')->references('codeLocal')->on('local')->onDelete('cascade');
 
             //CODIGO DE LA DEUDA DE CADA LOCAL
-            $table->string('codeDebt',10);
-            $table->foreign('codeDebt')->references('codeDebt')->on('debt');
+            $table->bigInteger('codeDebt')->unsigned();
+            $table->foreign('codeDebt')->references('codeDebt')->on('debt')->onDelete('cascade');
 
             $table->string('nameSuperviser',60);
 

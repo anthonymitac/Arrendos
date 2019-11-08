@@ -16,13 +16,13 @@ class AddLocal extends Migration
         Schema::create('local', function (Blueprint $table ){
             $table->engine = 'InnoDB';
             //LLAVE PRIMARIA DE LOCAL
-            $table->string('codeLocal',10)->primary();
+            $table->bigIncrements('codeLocal')->unsigned();
             //LLAVE FORANEA DE LESSOR
-            $table->string('codeLessor',10);
-            $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
+            $table->bigInteger('codeLessor')->unsigned();
+            $table->foreign('codeLessor')->references('codeLessor')->on('lessor')->onDelete('cascade');
             //LLAVE FORANEA DE DEBT
-            $table->string('codeDebt',10);
-            $table->foreign('codeDebt')->references('codeDebt')->on('debt');
+            $table->bigInteger('codeDebt')->unsigned();
+            $table->foreign('codeDebt')->references('codeDebt')->on('debt')->onDelete('cascade');
 
             //NOMBRE DEL LOCAL
             $table->string('nameLocal',60);

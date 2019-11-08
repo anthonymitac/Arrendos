@@ -16,19 +16,19 @@ class AddSector extends Migration
         Schema::create('sector', function (Blueprint $table ){
             $table->engine = 'InnoDB';
             //LLAVE PRIMARIA DE SECTOR
-            $table->string('codeSector',10)->primary();
+            $table->bigIncrements('codeSector')->unsigned();
 
             //LLAVE FORANEA DE LOCAL
-            $table->string('codeLocal',10);
-            $table->foreign('codeLocal')->references('codeLocal')->on('local');
+            $table->bigInteger('codeLocal')->unsigned();
+            $table->foreign('codeLocal')->references('codeLocal')->on('local')->onDelete('cascade');
 
             //LLAVE FORANEA DE LESSOR
-            $table->string('codeLessor',10);
-            $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
+            $table->bigInteger('codeLessor')->unsigned();
+            $table->foreign('codeLessor')->references('codeLessor')->on('lessor')->onDelete('cascade');
 
             //LLAVE FORANEA DE DEBT
-            $table->string('codeDebt',10);
-            $table->foreign('codeDebt')->references('codeDebt')->on('debt');
+            $table->bigInteger('codeDebt')->unsigned();
+            $table->foreign('codeDebt')->references('codeDebt')->on('debt')->onDelete('cascade');
 
             //NOMBRE DEL SECTOR
             $table->string('nameSector',60)->unique();

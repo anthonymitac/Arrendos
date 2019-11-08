@@ -16,13 +16,13 @@ class AddLessor extends Migration
         Schema::create('lessor', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->string('codeLessor',10)->primary();
+            $table->bigIncrements('codeLessor')->unsigned();
 
             $table->string('nameLessor',60);
 
-            $table->string('dniLessor',8);
+            $table->string('dniLessor',8)->unique();
 
-            $table->string('surnamesLessor',100);
+            $table->string('surnamesLessor',60);
 
             $table->string('genderLessor',1);
 

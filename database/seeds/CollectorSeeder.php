@@ -12,10 +12,5 @@ class CollectorSeeder extends Seeder
     public function run()
     {
         //
-        Collector::create([
-            'codeCollector'=>'001',
-            'genderCollector'=>'M'
-        ]);
-        
     }
 }

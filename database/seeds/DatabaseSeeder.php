@@ -15,9 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->truncateTables([
             'collector',
+            'lessor'
         ]);
         // $this->call(UsersTableSeeder::class);
         $this->call(CollectorSeeder::class);
+        $this->call(LessorSeeder::class);
     }
     protected function truncateTables(array $tables){
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');//desactivar las llaves foraneas

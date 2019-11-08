@@ -9,4 +9,7 @@ class Lessor extends Model
     //
     public $timestamps=false;
     public $table = "lessor";
+    protected $primaryKey = 'codeLessor';
+    protected $fillable = ['codeLessor','nameLessor','dniLessor','surnamesLessor','genderLessor'];
+
 }

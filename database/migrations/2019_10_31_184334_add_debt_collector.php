@@ -16,30 +16,30 @@ class AddDebtCollector extends Migration
         Schema::create('collector', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             //CLAVE PRIMARIA DE COLLECTOR
-            $table->string('codeCollector',10)->primary();
+            $table->bigIncrements('codeCollector')->unsigned();
 
             //CLAVE FORANEA DE SECTOR
-            $table->string('codeSector',10);
-            $table->foreign('codeSector')->references('codeSector')->on('sector');
+            $table->bigInteger('codeSector')->unsigned();
+            $table->foreign('codeSector')->references('codeSector')->on('sector')->onDelete('cascade');
             
             //CLAVE FORANEA DE LOCAL
-            $table->string('codeLocal',10);
-            $table->foreign('codeLocal')->references('codeLocal')->on('local');
+            $table->bigInteger('codeLocal')->unsigned();
+            $table->foreign('codeLocal')->references('codeLocal')->on('local')->onDelete('cascade');
 
             //CLAVE FORANEA DE ARRENDADOR
-            $table->string('codeLessor',10);
-            $table->foreign('codeLessor')->references('codeLessor')->on('lessor');
+            $table->bigInteger('codeLessor')->unsigned();
+            $table->foreign('codeLessor')->references('codeLessor')->on('lessor')->onDelete('cascade');
 
             //CLAVE FORANEA DE DEUDA
-            $table->string('codeDebt',10);
-            $table->foreign('codeDebt')->references('codeDebt')->on('debt');
+            $table->bigInteger('codeDebt')->unsigned();
+            $table->foreign('codeDebt')->references('codeDebt')->on('debt')->onDelete('cascade');
             
 
-            $table->string('nameCollector',60)->nullable();
+            $table->string('nameCollector',60);
 
-            $table->integer('dniCollector')->nullable();
+            $table->integer('dniCollector');
 
-            $table->string('surnamesCollector',100)->nullable();
+            $table->string('surnamesCollector',100);
 
             $table->string('genderCollector',1);    
 
