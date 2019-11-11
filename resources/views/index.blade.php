@@ -13,6 +13,7 @@
         <?php endforeach ?>
     </body>
     <a href="{{ route('lessor.create') }}" >Añadir LESSOR</a>
+    
     <br>
     <br>
     

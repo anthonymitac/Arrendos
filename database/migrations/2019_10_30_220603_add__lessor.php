@@ -16,7 +16,7 @@ class AddLessor extends Migration
         Schema::create('lessor', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('codeLessor')->unsigned();
+            $table->increments('id');
 
             $table->string('nameLessor',60);
 

@@ -26,7 +26,7 @@ class LessorController extends Controller
         //dd($lessor->toArray());
         return view('edit', compact('lessor'));
     }
-
+    
     function create(){
         return view('create');
     }

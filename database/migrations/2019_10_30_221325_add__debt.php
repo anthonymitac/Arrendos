@@ -15,10 +15,8 @@ class AddDebt extends Migration
     {
         Schema::create('debt', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('codeDebt')->unsigned();
-            //LLAVE FORANEA DE LESSOR
-            $table->bigInteger('codeLessor')->unsigned();
-            $table->foreign('codeLessor')->references('codeLessor')->on('lessor')->onDelete('cascade');
+            //LLAVE PRIMARIA DE DEBT
+            $table->increments('id')->unsigned();
 
             //NUMERO DE MESES DE LA DEUDA
             $table->integer('numMonthsDebt');

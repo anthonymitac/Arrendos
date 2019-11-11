@@ -11,28 +11,16 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//PARA VER TODOS LOS LESSORS
-//Route::get('/lessor','LessorController@lessorList');
+Route::get('/', function () {
+    $lessor=App\Lessor::findOrFail(2);
+    //dd($lessor);
+    //foreach ($locals as $less){
+        
+        return $lessor ->locals;
+    
+    //}
+    //return $lessor->locals;
+});
 
-//PARA AGREGAR A LOS LESSORS
-//Route::get('/lessor/create','LessorController@addLessor');
-
-//METODO POST QUE AYUDA A AGREGAR LESSORS
-//Route::post('/lessor/create','LessorController@storeLessor');
-
-//VER EL MENU PARA LOS LESSOR
-
-
-//RUTA PARA ACTUALIZAR LESSORS
 
 Route::resource('lessor','LessorController');
-//->only(['index','update'
-//]);
-
-//Route::get('/lessor/editLessor/{codeLessor}','LessorController@editLessor');
-
-//Route::post('/lessor/editLessor/{codeLessor}','LessorController@updateLessor');
-
