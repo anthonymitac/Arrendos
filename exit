@@ -1,0 +1,29 @@
+[33mcommit 73082c0b3eb68bd5751fe22170b1385d5ef68d40[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Baby Driver <bryan.mendoza@unas.edu.pe>
+Date:   Mon Nov 11 11:50:43 2019 -0500
+
+    proyecto realizado con exito las relationships de lessor local debt, ademas falta hacer las demas tablas, tambien esta hecho la edicion y agregacion de lessor
+
+[33mcommit a959c0e69688efa7e8e209dd7b451ddce206c809[m
+Author: Baby Driver <bryan.mendoza@unas.edu.pe>
+Date:   Fri Nov 8 17:39:25 2019 -0500
+
+    elaboracion de Lessor sin relationship, con agregar,ver,editar
+
+[33mcommit 539164dbc40a51a33b9e706b9dc6226282ca5352[m
+Author: Baby Driver <bryan.mendoza@unas.edu.pe>
+Date:   Sun Nov 3 17:52:56 2019 -0500
+
+    Agregando Model a cada seeders
+
+[33mcommit 85830882021f3cc31d041a9ea500302b6510e415[m
+Author: Baby Driver <bryan.mendoza@unas.edu.pe>
+Date:   Sat Nov 2 08:21:03 2019 -0500
+
+    NO QUIERE FUNCIONAR EL SEEDER, LAS MIGRACIONES ESTAN BIEN
+
+[33mcommit 38d6655032fdc8d1c3cdf641cc3765f67db98099[m
+Author: Baby Driver <bryan.mendoza@unas.edu.pe>
+Date:   Thu Oct 31 13:32:07 2019 -0500
+
+    Arrendos inicial

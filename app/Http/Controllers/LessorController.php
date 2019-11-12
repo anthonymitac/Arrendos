@@ -22,7 +22,7 @@ class LessorController extends Controller
     function edit($codeLessor){
         //dd($codeLessor);
         $lessor=Lessor::find($codeLessor);
-        //dd($lessor->codeLessor);
+        //dd($lessor->id);
         //dd($lessor->toArray());
         return view('edit', compact('lessor'));
     }
@@ -41,7 +41,7 @@ class LessorController extends Controller
         return redirect()->route('index')->with('success','Registro eliminado satisfactoriamente');
     }
     function update(Request $request, $codeLessor){
-        
+        //dd($request);
         $lessor=Lessor::find($codeLessor);
         $lessor->nameLessor=$request->input('nameLessor');
         $lessor->dniLessor=$request->input('dniLessor');
